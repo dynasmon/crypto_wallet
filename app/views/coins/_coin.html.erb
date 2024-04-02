@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moedas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/fotos-premium/pano-de-fundo-digital-escuro-com-icones-landing-page-concept-3d-rendering_670147-20147.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .coin-container {
+            max-width: 1200px; /* ajuste conforme necessário */
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px; /* Adiciona um espaçamento interno */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            border-radius: 20px;
+            background-color: #fff;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .coin {
+            background-color: rgba(200, 126, 190, 0.55); /* Cor de fundo com transparência */
+            border-radius: 8px; /* Arredonda as bordas */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+            padding: 20px; /* Adiciona um espaçamento interno */
+            margin-bottom: 20px; /* Adiciona margem inferior */
+            flex: 0 0 calc(33.33% - 40px); /* Ajusta a largura das moedas */
+            margin-right: 20px; /* Adiciona margem direita */
+            box-sizing: border-box;
+        }
+
+        .coin-info strong {
+            text-decoration: none; /* Remove o sublinhado */
+            color: black; /* Define a cor do texto como branco */
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <% batatas.each do |coin| %>
+            <a href="/coins/<%= coin.id %>" class="coin-link">
+                <div id="coin_<%= dom_id(coin) %>" class="coin">
+
+                    <div class="coin-info">
+                        <strong>Descrição:</strong>
+                        <%= coin.description %>
+                    </div>
+                
+                    <div class="coin-info">
+                        <strong>Sigla:</strong>
+                        <%= coin.acronym %>
+                    </div>
+                
+                    <div class="coin-info">
+                        <strong>Imagem:</strong>
+                        <br>
+                        <img src="<%= coin.url_image %>" alt="<%= coin.acronym %> Image" width="50" height="50">
+                    </div>
+
+                    <!-- Adicione um elemento para exibir o preço -->
+                    <div class="coin-info" id="price_<%= dom_id(coin) %>">
+                        <strong>Preço:</strong> Futauramente... Estudando API
+                    </div>
+                </div>
+            </a>
+        <% end %>
+    </div>
+    <!-- Botão "New Coin" -->
+    <a href="/coins/new" class="button">New Coin</a>
+    <a href="/" class="button">Início</a>
+
+    <script>
+        // Função para buscar e exibir preços
+        function fetchPrices() {
+            // Aqui você faria uma chamada para a API que fornece os preços das moedas
+            // Substitua este exemplo pela chamada real à sua API
+            const mockPrices = {
+                BTC: 45000,
+                ETH: 3000,
+                LTC: 150,
+                // Adicione mais moedas conforme necessário
+            };
+
+            // Atualize os preços para cada moeda na página
+            Object.keys(mockPrices).forEach(coin => {
+                const priceElement = document.getElementById(`price_${coin}`);
+                if (priceElement) {
+                    priceElement.innerHTML = `<strong>Preço: </strong> $${mockPrices[coin]}`;
+                }
+            });
+        }
+
+        // Chame a função ao carregar a página
+        fetchPrices();
+    </script>
+</body>
+</html>

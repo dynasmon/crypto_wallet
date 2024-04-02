@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining types</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja Bem-Vindo</title>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/fotos-premium/pano-de-fundo-digital-escuro-com-icones-landing-page-concept-3d-rendering_670147-20147.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh; /* Garante que a imagem de fundo cubra toda a altura da janela de visualização */
+            margin: 0; /* Remove margens para evitar espaços em branco */
+            padding: 0; /* Remove preenchimento */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white; /* Define a cor do texto para branco para melhor legibilidade */
+        }
+        h1, h2, p {
+            margin: 10px; /* Adiciona margens para espaçamento */
+        }
+        img {
+            width: 250px;
+            height: 250px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p style="color: green"><%= notice %></p>
+
+    <h1>Mining types</h1>
+
+    <div id="mining_types">
+        <% @mining_types.each do |mining_type| %>
+            <%= render mining_type %>
+            <p>
+                <%= link_to "Show this mining type", mining_type, class: "button" %>
+            </p>
+        <% end %>
+    </div>
+
+    <%= link_to "New mining type", new_mining_type_path, class: "button" %> |
+    <a href="/" class="button">Início</a>
+</body>
+</html>

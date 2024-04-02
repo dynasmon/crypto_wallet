@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<div>
+  <strong>Descrição:</strong> <%= @coin.description %><br>
+  <strong>Sigla:</strong> <%= @coin.acronym %><br>
+  <strong>Imagem:</strong> <%= image_tag @coin.url_image, width: 50, height: 50 %> <!-- Supondo que 'url_image' seja a URL da imagem -->
+</div>
+
+<div>
+  <%= link_to "Editar", edit_coin_path(@coin), class: "button" %> |
+  <%= link_to "Voltar", coins_path, class: "button" %>
+  <%= button_to "Apagar Moeda", @coin, method: :delete, class: "button" %>
+</div>

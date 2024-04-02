@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining Types</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            border-radius: 20px;
+            background-color: #fff;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <p style="color: green"><%= notice %></p>
+
+    <%= render @mining_type %>
+
+    <div>
+        <%= link_to "Edit this mining type", edit_mining_type_path(@mining_type), class: "button" %> |
+        <%= link_to "Back to mining types", mining_types_path, class: "button" %>
+
+        <%= button_to "Destroy this mining type", @mining_type, method: :delete, class: "button", data: { confirm: "Are you sure?" } %>
+    </div>
+</body>
+</html>

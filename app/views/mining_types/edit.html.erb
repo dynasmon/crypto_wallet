@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing mining type</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            border-radius: 20px;
+            background-color: #fff;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Editing mining type</h1>
+
+    <%= render "form", mining_type: @mining_type %>
+
+    <br>
+
+    <div>
+        <%= link_to "Show this mining type", @mining_type, class: "button" %> |
+        <%= link_to "Back to mining types", mining_types_path, class: "button" %>
+    </div>
+</body>
+</html>

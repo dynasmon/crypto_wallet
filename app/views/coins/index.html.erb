@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+<link rel="stylesheet" href="styles.css">
+
+
+<div id="coins">
+  <h1 class="title">Moedas</h1>
+  
+  <%= render partial: "coin", locals: {batatas: @coins} %>
+</div>
+
+

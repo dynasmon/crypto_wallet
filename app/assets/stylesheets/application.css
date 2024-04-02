@@ -1,0 +1,92 @@
+body {
+    
+    list-style: none;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #9c41f7;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(17, 8, 8);
+}
+
+.container {
+    max-width: 1200px; /* ajuste conforme necessário */
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px; /* Adiciona um espaçamento interno */
+    border-radius: 10px; /* Arredonda as bordas */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra */
+}
+
+.transparent-section {
+    background-color: rgb(143, 114, 138); /* Cor de fundo com transparência */
+    flex: 0 0 100%; /* Define a largura total */
+    margin-bottom: 20px; /* Adiciona margem inferior */
+    border-radius: 10px; /* Arredonda as bordas */
+    box-sizing: border-box;
+    padding: 20px; /* Adiciona um espaçamento interno */
+}
+
+.coin {
+    background-color: #c678be; /* Cor de fundo das moedas */
+    border-radius: 8px; /* Arredonda as bordas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+    padding: 20px; /* Adiciona um espaçamento interno */
+    margin-bottom: 20px; /* Adiciona margem inferior */
+    flex: 0 0 calc(33.33% - 40px); /* Ajusta a largura das moedas */
+    margin-right: 20px; /* Adiciona margem direita */
+    box-sizing: border-box;
+}
+
+
+.title {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(168, 149, 168);
+}
+
+.show-coin {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.coin-info {
+    margin-bottom: 10px;
+}
+
+.coin-info strong {
+    color: #333;
+    font-weight: bold;
+}
+
+.coin img {
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    background-color: #b192ab;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.button:hover {
+    background-color: #755280;
+    color: #ebddeb;
+    border-color: #000;
+}
